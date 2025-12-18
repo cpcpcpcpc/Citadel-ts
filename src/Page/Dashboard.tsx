@@ -2,8 +2,10 @@
 import React, { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { type RootState } from '../store/store';
-import { Box, Paper, Typography, Container, Chip } from '@mui/material';
 
+import { AlertTrendChart } from '../components/AlertTrendChart';
+
+import { Box, Paper, Typography, Container, Chip } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import SecurityIcon from '@mui/icons-material/Security';
 import WarningAmberIcon from '@mui/icons-material/WarningAmber';
@@ -81,8 +83,8 @@ export const Dashboard: React.FC = () => {
             <Paper elevation={3} sx={{ p: 3, height: 400 }}>
               <Typography variant="h6" gutterBottom>警報趨勢圖 (Alert Trends)</Typography>
               
-              <Box sx={{ width: '100%', height: '85%', backgroundColor: '#eee', display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius: 1 }}>
-                <Typography color="textSecondary">[ Plotly Chart Placeholder ]</Typography>
+              <Box sx={{ width: '100%', height: '90%' }}>
+                <AlertTrendChart />
               </Box>
             </Paper>
           </Grid>
