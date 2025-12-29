@@ -38,16 +38,6 @@ export const Dashboard: React.FC = () => {
     return () => clearInterval(timer);
   }, [dispatch]);
 
-  // 輔助函數：根據風險等級回傳對應顏色
-  // const getSeverityColor = (severity: string) => {
-  //   switch (severity) {
-  //     case 'Critical': return 'error';
-  //     case 'Severe': return 'warning';
-  //     case 'High': return 'warning';
-  //     default: return 'info';
-  //   }
-  // };
-
   return (
     <Box sx={{ flexGrow: 1, minHeight: '100vh', backgroundColor: '#f4f6f8', py: 4 }}>
       <Container maxWidth="xl">
@@ -98,7 +88,7 @@ export const Dashboard: React.FC = () => {
 
           {/* B. 圖表區 */}
           <Grid size={{ xs: 12 }}>
-            <Paper elevation={3} sx={{ p: 3, height: 400 }}>
+            <Paper elevation={3} sx={{ p: 3,backgroundColor: '#1e1e1e', color: '#fff', height: 400 }}>
               <Typography variant="h6" gutterBottom>警報趨勢圖 (Alert Trends)</Typography>
               <Box sx={{ width: '100%', height: '90%' }}>
                 <AlertTrendChart/>

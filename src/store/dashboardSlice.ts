@@ -15,6 +15,9 @@ const initialState: DashboardState = {
   lastUpdated: new Date().toISOString(),
 };
 
+
+const MAX_ALERTS = 100; // 設定上限值
+
 export const dashboardSlice = createSlice({
   name: 'dashboard',
   initialState,
@@ -22,6 +25,12 @@ export const dashboardSlice = createSlice({
     // 定義一個 Action：新增警報 (未來模擬實時數據用)
     addAlert: (state, action: PayloadAction<SecurityAlert>) => {
       state.alerts.unshift(action.payload); // 加到陣列最前面
+
+      // 檢查長度，如果超過則切掉後面的
+      if (state.alerts.length > MAX_ALERTS) {
+        state.alerts.pop();
+      }
+
       state.lastUpdated = new Date().toISOString();
     },
   },
